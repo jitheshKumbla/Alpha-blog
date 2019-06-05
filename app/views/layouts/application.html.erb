@@ -10,7 +10,11 @@
   </head>
 
   <body>
+    <%= render :partial => 'partials/navigation.html.erb' %>
     <%= render :partial => 'layouts/messages.html.erb' %>
-    <%= yield %>
+    <div class="container">
+      <%= yield %>  
+    </div>
+    <%= render :partial => 'partials/footer.html.erb'%>
   </body>
 </html>
