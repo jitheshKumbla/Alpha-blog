@@ -1,0 +1,29 @@
+<h1>Create new article</h1>
+
+<% if @article.errors.any? %>
+<h2>The following errors are getting created</h2>
+<ul>
+	<% @article.errors.full_messages.each do |error_msg| %>
+			<li>
+			<%= error_msg %>			
+			</li>
+	<% end %>
+</ul>
+<% end %>
+
+
+
+<%= form_for @article do |article| %>
+	<p>
+		<%= article.label :title %><br>
+		<%= article.text_field :title%>
+	</p>
+
+	<p>
+		<%= article.label :description %><br>
+		<%= article.text_area :description %>
+	</p>
+	<p>
+		<%= article.submit %>
+	</p>
+<% end %>
